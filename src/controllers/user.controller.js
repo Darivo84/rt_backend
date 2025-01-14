@@ -182,6 +182,17 @@ export const getUsersForSidebar = async (req, res) => {
 //   }
 // };
 
+export const getUserProfile = async (req, res) => {
+  try {
+    const userid = req.userId
+    const userData = await User.findById(userid).select('-password')
+    res.status(201).json({ success: true })
+  } catch (error) {
+    console.error('Error in getUserProfile:', error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+}
+
 export const bookAppointment = async (req, res) => {
   try {
     const {

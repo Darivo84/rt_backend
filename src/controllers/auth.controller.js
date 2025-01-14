@@ -222,7 +222,6 @@ export const updateMyProfile = async (req, res) => {
       const updateData = {
         firstName,
         lastName,
-        gender,
         'userFields.dob': dob,
         'userFields.phone': phone,
         'userFields.idNumber': idNumber,
@@ -292,7 +291,6 @@ export const updateProfile = async (req, res) => {
       const updateData = {
         firstName,
         lastName,
-        gender,
         'professionalFields.speciality': speciality,
         'professionalFields.businessName': businessName,
         'professionalFields.about': about,
