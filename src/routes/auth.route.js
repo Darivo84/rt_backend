@@ -10,7 +10,8 @@ import {
   forgotPassword,
   resetPassword,
   getProfessionals,
-  getUsersForSidebar
+  getUsersForSidebar,
+  getUserProfile,
 } from '../controllers/auth.controller.js';
 import { protectRoute } from '../middleware/auth.middleware.js';
 
@@ -27,6 +28,7 @@ router.put('/update-profile', protectRoute, updateProfile);
 router.put('/update-my-profile', protectRoute, updateMyProfile)
 
 router.get('/check', protectRoute, checkAuth);
+router.get('/profile', protectRoute, getUserProfile);
 router.get('/list-professionals', getProfessionals);
 router.get('/get-users', protectRoute, getUsersForSidebar);
 
